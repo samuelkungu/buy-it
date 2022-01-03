@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "448433210930",
+    "project_id": "authentication-fadb0",
+    "storage_bucket": "authentication-fadb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448433210930:android:ecc2abfd3f0544435bde2b",
+        "android_client_info": {
+          "package_name": "com.example.loginfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448433210930-iiqjp5q64g2i7ef2o09841pegsr4ggjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ9vihp7L6ivQsxPiSuUPD_iZMMXKQIzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448433210930-iiqjp5q64g2i7ef2o09841pegsr4ggjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

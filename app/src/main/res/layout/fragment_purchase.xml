@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    tools:context=".Purchase">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:id="@+id/linearItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item1"
+            android:src="@drawable/shoes"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="AirForce Shoes" />
+
+        <TextView
+            android:id="@+id/item1Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Price  $50" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/cart1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="ADD TO CART"
+                android:textSize="8sp" />
+
+            <EditText
+                android:id="@+id/ed1"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/cart1"
+                android:hint="number of items"
+                android:textSize="10sp"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:id="@+id/txtCart1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DELETE" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearItems2"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/linearItems">
+        <ImageView
+            android:id="@+id/item2"
+            android:src="@drawable/polo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="Polo shirts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/item2Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price  $45"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/cart2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="8sp"
+                android:text="ADD TO CART"/>
+
+            <EditText
+                android:id="@+id/ed2"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:hint="number of items"
+                android:layout_alignBottom="@id/cart1"
+                />
+            <TextView
+                android:id="@+id/txtCart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="DELETE"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearItems3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/linearItems2"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gucci" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Gucci Pants" />
+
+        <TextView
+            android:id="@+id/item3Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Price  $60" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/cart3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="8sp"
+                android:text="ADD TO CART"/>
+
+            <EditText
+                android:id="@+id/ed3"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:hint="number of items"
+                android:layout_alignBottom="@id/cart1"
+                />
+
+            <TextView
+                android:id="@+id/txtCart3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="DELETE"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearItems4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item4"
+            android:src="@drawable/laptop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            />
+
+        <TextView
+            android:id="@+id/item4Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Price  $150" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Laptop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/cart4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="8sp"
+                android:text="ADD TO CART"/>
+
+            <EditText
+                android:id="@+id/ed4"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:hint="number of items"
+                android:layout_alignBottom="@id/cart1"
+                />
+
+            <TextView
+                android:id="@+id/txtCart4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="DELETE"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearItems5"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="300dp"
+        android:layout_toEndOf="@+id/linearItems4">
+        <ImageView
+            android:id="@+id/item5"
+            android:src="@drawable/smartphone"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="SmartPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/item5Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price  $100"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/cart5"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="8sp"
+                android:text="ADD TO CART"/>
+
+            <EditText
+                android:id="@+id/ed5"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:hint="number of items"
+                android:layout_alignBottom="@id/cart1"
+                />
+
+            <TextView
+                android:id="@+id/txtCart5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="DELETE"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearItems6"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="300dp"
+        android:layout_toEndOf="@+id/linearItems5">
+        <ImageView
+            android:id="@+id/item6"
+            android:src="@drawable/smarttv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="Smart Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/item6Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price  $130"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/cart6"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textSize="8sp"
+                android:text="ADD TO CART"/>
+
+            <EditText
+                android:id="@+id/ed6"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:inputType="number"
+                android:hint="number of items"
+                android:layout_alignBottom="@id/cart1"
+                />
+
+            <TextView
+                android:id="@+id/txtCart6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="DELETE"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--    <Button-->
+    <!--        android:id="@+id/proceedToCheckout"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignBottom="@id/linearItems6"-->
+    <!--        android:layout_marginLeft="100dp"-->
+    <!--        android:layout_marginBottom="-56dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="Proceed to Checkout " />-->
+
+
+</RelativeLayout>
