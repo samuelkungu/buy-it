@@ -1,6 +1,7 @@
 package com.example.loginfirebase;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView registerTxt;
 
     private FirebaseAuth auth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         registerTxt = findViewById(R.id.registerTxt);
         emailEd = findViewById(R.id.email);
         passwordEd = findViewById(R.id.logInPassword);
+        auth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
 
 
         registerTxt.setOnClickListener(new View.OnClickListener() {
@@ -42,44 +46,56 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         logIn1.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View view) {
-                                          auth = FirebaseAuth.getInstance();
+
                                           String email = emailEd.getText().toString().trim();
                                           String password = passwordEd.getText().toString().trim();
                                           if (email.isEmpty()) {
                                               emailEd.setError("Email is required");
                                               emailEd.requestFocus();
                                               return;
-                                          }
-                                          if (password.isEmpty()) {
+                                          }else if (password.isEmpty()) {
                                               passwordEd.setError("password is required");
                                               passwordEd.requestFocus();
                                               return;
-                                          }
-                                          auth.signInWithEmailAndPassword(email, password)
+                                          }else if (password.length() < 6){
+                                              Toast.makeText(getBaseContext(), "Password needs to be more than 6 characters", Toast.LENGTH_LONG).show();
+                                              passwordEd.setError("use > 6 chars");
+
+                                                  progressDialog.setTitle("Please Wait...");
+                                                  progressDialog.setMessage("Checking Credentials");
+                                                  progressDialog.setCanceledOnTouchOutside(false);
+                                                  progressDialog.show();
+
+                                                  auth.signInWithEmailAndPassword(email, password)
                                                   .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                                                       @Override
                                                       public void onComplete(@NonNull Task<AuthResult> task) {
+                                                          progressDialog.dismiss();
+                                                      }
                                                           if (task.isSuccessful()) {
                                                               Toast.makeText(MainActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
                                                               Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                                                               startActivity(intent);
                                                           } else {
                                                               Toast.makeText(MainActivity.this, "Error try again", Toast.LENGTH_SHORT).show();
-                                                          }
+                                                          }else {
+                                                          //if there is an error it will be handled by addOnFailureListener
+                                                          //  Toast.makeText(getApplicationContext(),"Could not Sign In...",Toast.LENGTH_LONG).show();
                                                       }
-                                                  }).addOnFailureListener(new OnFailureListener() {
-                                              @Override
-                                              public void onFailure(@NonNull Exception e) {
-                                                  Toast.makeText(getApplicationContext(), "ERROR: " + e.toString(), Toast.LENGTH_LONG).show();
 
+                                              }).addOnFailureListener(new OnFailureListener() {
+                                                  @Override
+                                                  public void onFailure(@NonNull Exception e) {
+                                                      Toast.makeText(getApplicationContext(),"ERROR: "+e.toString(),Toast.LENGTH_LONG).show();
 
-                                              }
+                                                  }
                                           });
                                       }
 
                                   }
-        );}
+        ;}
 }
