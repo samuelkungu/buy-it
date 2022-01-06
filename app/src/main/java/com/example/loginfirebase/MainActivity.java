@@ -61,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
                                               passwordEd.setError("password is required");
                                               passwordEd.requestFocus();
                                               return;
-                                          }else if (password.length() < 6){
+                                          }else if (password.length() < 6) {
                                               Toast.makeText(getBaseContext(), "Password needs to be more than 6 characters", Toast.LENGTH_LONG).show();
-                                              passwordEd.setError("use > 6 chars");
+                                              passwordEd.setError("Use more than 6 characters");
+                                          } else
 
                                                   progressDialog.setTitle("Please Wait...");
                                                   progressDialog.setMessage("Checking Credentials");
@@ -75,27 +76,24 @@ public class MainActivity extends AppCompatActivity {
                                                       @Override
                                                       public void onComplete(@NonNull Task<AuthResult> task) {
                                                           progressDialog.dismiss();
-                                                      }
+
                                                           if (task.isSuccessful()) {
                                                               Toast.makeText(MainActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
                                                               Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                                                               startActivity(intent);
-                                                          } else {
-                                                              Toast.makeText(MainActivity.this, "Error try again", Toast.LENGTH_SHORT).show();
-                                                          }else {
-                                                          //if there is an error it will be handled by addOnFailureListener
-                                                          //  Toast.makeText(getApplicationContext(),"Could not Sign In...",Toast.LENGTH_LONG).show();
+                                                          }
                                                       }
+
 
                                               }).addOnFailureListener(new OnFailureListener() {
                                                   @Override
                                                   public void onFailure(@NonNull Exception e) {
-                                                      Toast.makeText(getApplicationContext(),"ERROR: "+e.toString(),Toast.LENGTH_LONG).show();
+                                                      Toast.makeText(getApplicationContext(),"User not Register! Try registering first "+e.toString(),Toast.LENGTH_SHORT).show();
 
                                                   }
                                           });
                                       }
 
-                                  }
+                                  })
         ;}
 }
