@@ -51,7 +51,7 @@ public class Register extends Fragment {
         logInTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(),LogIn.class);
+                Intent intent = new Intent(getContext(),MainActivity.class);
                 startActivity(intent);
 
             }
